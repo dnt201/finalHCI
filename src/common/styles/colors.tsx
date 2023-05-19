@@ -1,0 +1,23 @@
+export const colors = {
+  PRIMARY: '#000',
+  BLACK: '#252422',
+  SECONDARY: '#6C63FF',
+  WHITE: '#FFFFFF',
+  ERROR: '#FF3C3C',
+  ERROR_LIGHT: '#e7c0c6',
+  SUCCESS: '#03A65A',
+  SUCCESS_LIGHT: '#b4e5ce',
+  BODY: '#646464',
+
+  LINE: '#EEEEEE',
+  TERTIARY: '#F7F8FB',
+  WARNING: '#F88F01',
+  LINEAR: ['#001E6C', '#035397'],
+  LINE_GRAY_COLOR: '#FBFBFB',
+  RED_LINE_COLOR: 'rgba(234,78,27,0.06)',
+  YELLOW_LINE_COLOR: 'rgba(246,182,0,0.16)',
+  GRAY: '#F1F1F1',
+  LINE_GREY: '#FAFAFA',
+  SMOKE: '#B3B3B3',
+  BORDER: '#e0e0e0',
+};
