@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Square, Text, VStack, HStack, Box} from 'native-base';
 import {colors} from '@common/styles';
 import {width} from '@hooks/dimensions';
@@ -8,16 +8,22 @@ import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 const ProductItem: React.FC<iProductItem> = props => {
   const {name, image, price, rating, sold} = props;
   const w = width / 2 - 24 > 200 ? 200 : width / 2 - 24;
-
+  const [isLike, setIsLike] = useState(false);
   return (
     <VStack w={'50%'} space={4} position="relative">
       <TouchableOpacity
         style={styles.likeBtn}
         onPress={e => {
+          setIsLike(pre => !pre);
           e.preventDefault();
         }}>
         <Box borderRadius={50} p={'8px'} bgColor={'#2e2e2e'}>
-          <Hearth width={18} height={18} stroke={'#fff'} />
+          <Hearth
+            width={18}
+            height={18}
+            fill={isLike ? '#D30000' : '#2e2e2e'}
+            stroke={isLike ? '#d30000' : '#fff'}
+          />
         </Box>
       </TouchableOpacity>
       <Square
@@ -29,7 +35,7 @@ const ProductItem: React.FC<iProductItem> = props => {
         rounded={16}>
         <Image source={image} style={styles.image} alt="" />
       </Square>
-      <Text numberOfLines={1} fontSize={18} mt={1} fontWeight={'500'}>
+      <Text numberOfLines={1} mr={4} fontSize={18} mt={1} fontWeight={'500'}>
         {name}
       </Text>
       <HStack justifyContent={'flex-start'} alignItems={'center'} space={6}>
@@ -49,7 +55,7 @@ const ProductItem: React.FC<iProductItem> = props => {
         </Box>
       </HStack>
       <Text fontSize={18} mt={1} fontWeight={'500'}>
-        $ {price}
+        $ {price.toFixed(2)}
       </Text>
     </VStack>
   );
