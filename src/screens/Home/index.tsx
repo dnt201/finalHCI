@@ -50,7 +50,6 @@ const HomeScreen: React.FC<IHomeScreenMode> = ({navigation}) => {
   // };
   const [isMore, setIsMore] = useState(false);
   const {categorySelected} = useAppSelector(state => state.category);
-  console.log(categorySelected);
 
   return (
     <ScrollView style={styles.homeContainer}>
@@ -122,7 +121,8 @@ const HomeScreen: React.FC<IHomeScreenMode> = ({navigation}) => {
           </HStack>
         ) : (
           <HStack flexWrap={'wrap'} style={styles.rowGap24} pt={2}>
-            {listOfListItem[categorySelected] !== undefined ? (
+            {listOfListItem[categorySelected] !== undefined &&
+            listOfListItem[categorySelected].length > 0 ? (
               listOfListItem[categorySelected].map(item => (
                 <ProductItem key={item.name} {...item} />
               ))

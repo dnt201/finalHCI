@@ -17,7 +17,7 @@ const SeasonCollection: React.FC<iSeasonCollection> = props => {
       mx={'6px'}
       bgColor={`#${collectionItem.colorCode}`}
       rounded={20}>
-      <VStack width={'50%'} space={0} justifyContent={'center'} space={4}>
+      <VStack width={'50%'} justifyContent={'center'} space={4}>
         <Box>
           <Text fontSize={24} flex={1} color={'#fff'} fontWeight={'600'}>
             {collectionItem.name}

@@ -17,6 +17,17 @@ import shirt2 from '@assets/images/Shirt/shirt2.png';
 import shirt3 from '@assets/images/Shirt/shirt3.png';
 import shirt4 from '@assets/images/Shirt/shirt4.png';
 import shirt5 from '@assets/images/Shirt/shirt5.png';
+import pant1 from '@assets/images/Pant/pant1.png';
+import pant2 from '@assets/images/Pant/pant2.png';
+import pant3 from '@assets/images/Pant/pant3.png';
+import shoes1 from '@assets/images/Shoes/shoes1.png';
+import shoes2 from '@assets/images/Shoes/shoes2.png';
+import shoes3 from '@assets/images/Shoes/shoes3.png';
+import shoes4 from '@assets/images/Shoes/shoes4.png';
+import shoes5 from '@assets/images/Shoes/shoes5.png';
+import shoes6 from '@assets/images/Shoes/shoes6.png';
+import shoes7 from '@assets/images/Shoes/shoes7.png';
+import shoes8 from '@assets/images/Shoes/shoes8.png';
 export interface iCategoryItem {
   id: number;
   name: string;
@@ -32,8 +43,8 @@ export interface iProductItem {
 }
 
 export const listOfListItem: iProductItem[][] = [
+  //áo
   [
-    //áo
     {
       name: 'Áo Thun Raglan Label Signature',
       image: shirt1,
@@ -70,34 +81,89 @@ export const listOfListItem: iProductItem[][] = [
       rating: 4.6,
     },
   ],
+  //quần dài
   [
-    //quần dài
     {
-      name: 'Áo Polo WH5000X',
-      image: a,
+      name: 'Quần Tây Slim-fit Lưng Phối Nhung Tăm',
+      image: pant2,
+      price: 45.45,
+      sold: 12,
+      rating: 4.2,
+    },
+    {
+      name: 'Quần Jeans Vip Slim Classic Gentle',
+      image: pant1,
+      price: 52.5,
+      sold: 399,
+      rating: 4.2,
+    },
+    {
+      name: 'Quần Tây Classic Gentle',
+      image: pant3,
       price: 85.0,
       sold: 722,
       rating: 4.2,
     },
   ],
+  //Vest
+  [],
+  //Giày
   [
-    //Vest
     {
-      name: 'Áo Polo WH5000X',
-      image: a,
+      name: 'Air Jordan Low SE',
+      image: shoes1,
       price: 85.0,
-      sold: 722,
+      sold: 123,
+      rating: 2.2,
+    },
+    {
+      name: 'Nike Air Force 1 07',
+      image: shoes2,
+      price: 120.6,
+      sold: 442,
+      rating: 2.4,
+    },
+    {
+      name: 'Nike Air Max Pulse',
+      image: shoes3,
+      price: 49.99,
+      sold: 378,
       rating: 4.2,
     },
-  ],
-  [
-    //Giày
+    {
+      name: "Nike Blazer Low '77 Vintage",
+      image: shoes4,
+      price: 42.29,
+      sold: 821,
+      rating: 3.7,
+    },
+    {
+      name: 'Nike Dunk High Retro Premium',
+      image: shoes5,
+      price: 69.39,
+      sold: 119,
+      rating: 4.2,
+    },
     {
       name: 'Áo Polo WH5000X',
-      image: a,
+      image: shoes6,
       price: 85.0,
       sold: 722,
-      rating: 4.2,
+      rating: 3.2,
+    },
+    {
+      name: 'Air Jordan 1 Low FlyEase',
+      image: shoes7,
+      price: 83.29,
+      sold: 581,
+      rating: 4.1,
+    },
+    {
+      name: 'Nike Pegasus 40 SE',
+      image: shoes8,
+      price: 83.29,
+      sold: 222,
+      rating: 4.8,
     },
   ],
 ];
