@@ -1,5 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {iCategoryItem} from '@screens/Home/list';
+import {iCategoryItem, iProductItem} from '@screens/Home/list';
 
 export type IRootStackParamList = {
   Welcome: undefined;
@@ -17,8 +17,7 @@ export type IRootStackParamList = {
   ForgotPassWord__CreateNewPass: undefined; //validateOTP
   ValidateOTP: undefined;
   //Category
-  Category__Detail: {category: iCategoryItem};
-  Category__More: undefined;
+  Category__Detail: {categoryName: string; id: number};
   // Profile
   EditProfile: undefined;
   EditProfile__Update: undefined;
@@ -40,8 +39,7 @@ export type IRootStackParamList = {
   Home: undefined;
 
   //Notify
-  NotifyList: undefined;
-  NotifyDetail: {id: string};
+  Notify: undefined;
 
   //Coupon
   CouponList: {isFromHome?: boolean};
@@ -50,16 +48,30 @@ export type IRootStackParamList = {
   //Product
   Product__MostPopular: undefined;
   ProductList: {id: string; title: string};
-  ProductDetail: {id: string};
   ProductFilter: undefined;
+  Product__Detail: {item: iProductItem};
+  WishList: undefined;
+
+  //Collection
+  Collection__All: undefined;
 
   //Order
   Order: undefined;
   OrderDetail: {id: string};
   Booking: {id: string};
+  Checkout: undefined;
+  ShippingAddress: undefined;
+  ChoseShipping: undefined;
+  AddPromo: undefined;
+  PaymentMethod: undefined;
+  TrackOrder: {step: number};
 
   //Cart
   Cart: undefined;
+
+  Checkout__ShippingAddress: undefined;
+  Checkout__ChoseShipping: undefined;
+  Checkout__AddPromo: undefined;
 };
 
 export const RootStack = createNativeStackNavigator<IRootStackParamList>();

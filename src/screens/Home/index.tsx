@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {HStack, ScrollView, Text, VStack} from 'native-base';
 import {FlatList, Image, StyleSheet} from 'react-native';
 
@@ -28,11 +28,7 @@ import SeasonCollection from '@components/SeasonCollection';
 
 export type INavigationProps = CompositeNavigationProp<
   BottomTabNavigationProp<IBottomParamList, 'Home'>,
-  NativeStackNavigationProp<
-    IRootStackParamList,
-    'Category__More',
-    'Category__Detail'
-  >
+  NativeStackNavigationProp<IRootStackParamList, 'Category__Detail', 'Notify'>
 >;
 
 interface IHomeScreenMode {
@@ -54,11 +50,11 @@ const HomeScreen: React.FC<IHomeScreenMode> = ({navigation}) => {
   return (
     <ScrollView style={styles.homeContainer}>
       <VStack space={'16px'} pb={12}>
-        <TopBar />
+        <TopBar navigation={navigation} />
         <ButtonFind />
         <TitleAndMore
           title="Season Collection"
-          onClick={() => navigation.navigate('Product__MostPopular')}
+          onClick={() => navigation.navigate('Collection__All')}
         />
 
         <FlatList
@@ -75,7 +71,10 @@ const HomeScreen: React.FC<IHomeScreenMode> = ({navigation}) => {
               {listCategory8.map(category => (
                 <CategoryItem
                   onClickGo={() =>
-                    navigation.navigate('Category__Detail', {category})
+                    navigation.navigate('Category__Detail', {
+                      categoryName: category.name,
+                      id: category.id,
+                    })
                   }
                   key={category.id}
                   category={category}
@@ -90,9 +89,13 @@ const HomeScreen: React.FC<IHomeScreenMode> = ({navigation}) => {
             <>
               {listCategory.map(category => (
                 <CategoryItem
-                  onClickGo={() =>
-                    navigation.navigate('Category__Detail', {category})
-                  }
+                  onClickGo={() => {
+                    console.log(category);
+                    navigation.navigate('Category__Detail', {
+                      categoryName: category.name,
+                      id: category.id,
+                    });
+                  }}
                   key={category.id}
                   category={category}
                 />
@@ -115,7 +118,13 @@ const HomeScreen: React.FC<IHomeScreenMode> = ({navigation}) => {
           <HStack flexWrap={'wrap'} style={styles.rowGap24} pt={2}>
             {listOfListItem.map((_, index) =>
               listOfListItem[index].map((item, i) => (
-                <ProductItem key={item.name + i} {...item} />
+                <ProductItem
+                  key={item.name + i}
+                  {...item}
+                  goDetail={() =>
+                    navigation.navigate('Product__Detail', {item: item})
+                  }
+                />
               )),
             )}
           </HStack>
@@ -124,7 +133,13 @@ const HomeScreen: React.FC<IHomeScreenMode> = ({navigation}) => {
             {listOfListItem[categorySelected] !== undefined &&
             listOfListItem[categorySelected].length > 0 ? (
               listOfListItem[categorySelected].map(item => (
-                <ProductItem key={item.name} {...item} />
+                <ProductItem
+                  key={item.name}
+                  {...item}
+                  goDetail={() =>
+                    navigation.navigate('Product__Detail', {item: item})
+                  }
+                />
               ))
             ) : (
               <HStack justifyContent="center" alignItems="center">

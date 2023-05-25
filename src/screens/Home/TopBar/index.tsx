@@ -2,8 +2,19 @@ import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {HStack, Image, Text, VStack} from 'native-base';
 import {Hearth, Notify} from '@icons';
+import { CompositeNavigationProp } from '@react-navigation/native';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { IBottomParamList, IRootStackParamList } from '@navigator';
+import { INavigationProps } from '..';
 
-const TopBar = () => {
+
+
+interface iTopBarProps {
+  navigation: INavigationProps;
+}
+const TopBar: React.FC<iTopBarProps> = (props) => {
+  const { navigation } = props
   return (
     <HStack alignItems="center" space={8}>
       <Image
@@ -23,10 +34,10 @@ const TopBar = () => {
           {'Duy Nhã Trần'}
         </Text>
       </VStack>
-      <TouchableOpacity style={styles.p2}>
+      <TouchableOpacity style={styles.p2} onPress={() => navigation.navigate('Notify')}> 
         <Notify />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.p2}>
+      <TouchableOpacity style={styles.p2} onPress={() => navigation.navigate('WishList')}>
         <Hearth />
       </TouchableOpacity>
     </HStack>

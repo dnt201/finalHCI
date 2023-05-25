@@ -1,13 +1,11 @@
 // @ts-nocheck
 import React from 'react';
-import {RootStack} from '@navigator';
-import Category__More from '@screens/Category__More';
+import { RootStack } from '@navigator';
 import Category__Detail from '@screens/Category__Detail';
 import Product__MostPopular from '@screens/Product__MostPopular';
 export const renderHomeStack = () => {
   return (
     <>
-      <RootStack.Screen name="Category__More" component={Category__More} />
       <RootStack.Screen name="Category__Detail" component={Category__Detail} />
       <RootStack.Screen
         name="Product__MostPopular"

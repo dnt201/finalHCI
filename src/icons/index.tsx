@@ -102,8 +102,30 @@ import HandBag from './Clothing/HandBag';
 import Dress from './Clothing/Dress';
 import Vali from './Clothing/Vali';
 import Vest from './Clothing/Vest';
+import Gift from './Gift';
+import Trash from './Trash';
+import EmptyCard from './EmptyCard';
+import Truck from './Truck';
+import BoxSvg from './Box';
+import Package from './Package';
+import PackageOpen from './PackageOpen';
+import HandShake from './HandShake';
+import CheckCircle from './CheckCircle';
+import ArrowCircleDown from './ArrowCircleDown';
+import ArrowCircleUp from './ArrowCircleUp';
 
 export {
+  ArrowCircleUp,
+  ArrowCircleDown,
+  CheckCircle,
+  HandShake,
+  PackageOpen,
+  Package,
+  BoxSvg,
+  Truck,
+  EmptyCard,
+  Trash,
+  Gift,
   Vest,
   Vali,
   Dress,

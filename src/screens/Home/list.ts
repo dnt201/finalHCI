@@ -11,7 +11,6 @@ import {
   Vest,
 } from '@icons';
 import {ImageSourcePropType} from 'react-native';
-import a from '@assets/images/product1.png';
 import shirt1 from '@assets/images/Shirt/shirt1.png';
 import shirt2 from '@assets/images/Shirt/shirt2.png';
 import shirt3 from '@assets/images/Shirt/shirt3.png';
@@ -40,6 +39,7 @@ export interface iProductItem {
   sale?: number;
   price: number;
   sold: number;
+  listImage?: ImageSourcePropType[];
 }
 
 export const listOfListItem: iProductItem[][] = [

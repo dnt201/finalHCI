@@ -30,7 +30,7 @@ const SeasonCollection: React.FC<iSeasonCollection> = props => {
         </Box>
         <Box>
           <Text fontSize={10} numberOfLines={2} flex={1} color={'#fff'}>
-            {collectionItem.subTitle}
+            {collectionItem.subTitle || 'no sub'}
           </Text>
         </Box>
       </VStack>

@@ -1,4 +1,4 @@
-import {ScrollView, TouchableOpacity} from 'react-native';
+import {ScrollView, TouchableOpacity, StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {listCategory} from '@screens/Home/list';
 import {Box, Text} from 'native-base';
@@ -14,7 +14,10 @@ const ListCategoryFiller = () => {
   }, []);
 
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView
+      horizontal
+      style={styles.scrollView}
+      showsHorizontalScrollIndicator={false}>
       <TouchableOpacity
         onPress={() => {
           setCurSelect(-1);
@@ -37,6 +40,7 @@ const ListCategoryFiller = () => {
       </TouchableOpacity>
       {listCategory.map(category => (
         <TouchableOpacity
+          key={category.id}
           onPress={() => {
             setCurSelect(category.id);
             dispatch(setCategorySelect(category.id));
@@ -62,3 +66,6 @@ const ListCategoryFiller = () => {
 };
 
 export default ListCategoryFiller;
+const styles = StyleSheet.create({
+  scrollView: {},
+});

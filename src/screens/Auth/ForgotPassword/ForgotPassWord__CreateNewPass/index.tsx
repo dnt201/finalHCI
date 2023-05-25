@@ -72,8 +72,8 @@ const ForgotPassWord__CreateNewPass: React.FC<
             Congratulation!
           </Text>
           <Text textAlign="center" mb={4}>
-            Tài khoản của bạn sẵn sàng để sử dụng. You will redirected to the
-            Login Page, please login with new password
+            Tài khoản của bạn sẵn sàng để sử dụng. Bạn sẽ được chuyển hướng đến
+            trang đăng nhập, vui lòng đăng nhập bằng mật khẩu mới.
           </Text>
 
           <Spinner accessibilityLabel="Loading posts" />
